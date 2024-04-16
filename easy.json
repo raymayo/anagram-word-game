@@ -1,6 +1,5 @@
 {
     "ponder": [
-        "ponder",
         "drone",
         "done",
         "node",
@@ -27,7 +26,6 @@
     "garden": [
         "danger",
         "gander",
-        "garden",
         "ranged",
         "grade",
         "raged",
@@ -51,7 +49,6 @@
         "rend"
     ],
     "danger": [
-        "danger",
         "gander",
         "garden",
         "ranged",
@@ -77,7 +74,6 @@
         "rend"
     ],
     "advert": [
-        "advert",
         "rated",
         "tared",
         "trade",
@@ -98,7 +94,6 @@
     "search": [
         "arches",
         "chaser",
-        "search",
         "reach",
         "aches",
         "chase",
@@ -138,7 +133,6 @@
         "hers"
     ],
     "stared": [
-        "stared",
         "trades",
         "treads",
         "dares",
@@ -186,7 +180,6 @@
         "rest"
     ],
     "denser": [
-        "denser",
         "resend",
         "sender",
         "dense",
@@ -213,7 +206,6 @@
     ],
     "ranges": [
         "angers",
-        "ranges",
         "anger",
         "range",
         "gears",
@@ -243,7 +235,6 @@
     ],
     "trades": [
         "stared",
-        "trades",
         "treads",
         "dares",
         "dears",
@@ -290,7 +281,6 @@
         "rest"
     ],
     "grades": [
-        "grades",
         "grade",
         "raged",
         "aged",

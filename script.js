@@ -3,32 +3,19 @@ new Sortable(document.getElementById('sort-group-1'), {
         name: 'shared',
 
     },
-    removeCloneOnHide: true,
-    onEnd: handleEnd,
     animation: 150, // Set animation duration (in milliseconds)
 });
 
 new Sortable(document.getElementById('sort-group-2'), {
     group: {
         name: 'shared',
-        pull: 'clone',
+
     },
     sort: false,
     animation: 150, // Set animation duration (in milliseconds)
 });
 
 
-function handleEnd(evt) {
-    const item = evt.item;
-    const fromList = evt.from;
-    const toList = evt.to;
-
-    // If the element is moved to a different list
-    if (fromList !== toList) {
-        // Remove the dragged item
-        item.parentNode.removeChild(item);
-    }
-}
 
 let usedKeys = [];
 let score = 0;
@@ -72,27 +59,30 @@ function splitStringAndCreateElements(str, parentElement) {
         parentElement.appendChild(letterElement);
     });
 }
+
+
 const correctWordArray = [];
 
 function checkAnagram(anagram) {
     const answerBoxText = document.getElementById('sort-group-1').textContent;
 
-    // Filter out words that are already in correctWordArray
-    const filteredAnagrams = anagram.filter(word => !correctWordArray.includes(word));
+    const foundWord = anagram.find(word => word === answerBoxText)
 
-    filteredAnagrams.forEach(word => {
-        if (word === answerBoxText) {
-            console.log('Correct!');
-            correctWordArray.push(word);
-            console.log(correctWordArray);
+    if (correctWordArray.find(word => word === answerBoxText)) {
+        alert('word is already submitted');
+    } else {
+        if (foundWord) {
+            correctWordArray.push(foundWord);
             score++;
+            alert('Correct!');
         } else {
-            console.log('Incorrect!');
+            alert('Incorrect!');
         }
-    });
+    }
 }
 
 
+// Add event listener for clear button outside fetchWordsData
 let clearBtn = document.getElementById('clearBtn').addEventListener('click', () => {
-    document.getElementById('sort-group-1').textContent = ''
-})
+    document.getElementById('sort-group-1').textContent = '';
+});
