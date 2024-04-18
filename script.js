@@ -11,7 +11,7 @@ new Sortable(document.getElementById('sort-group-2'), {
         name: 'shared',
 
     },
-    sort: false,
+    // sort: false,
     animation: 150, // Set animation duration (in milliseconds)
 });
 
@@ -35,11 +35,14 @@ function fetchWordsData() {
             console.log(selectedWord);
             console.log(wordAna);
             splitStringAndCreateElements(selectedWord, document.getElementById('sort-group-2'));
+            createListItems(wordAna.length)
 
             // Add event listener after data is fetched
             document.getElementById('submitBtn').addEventListener('click', () => {
                 checkAnagram(wordAna);
             });
+
+            console.log(wordAna.length);
 
         })
         .catch((error) => {
@@ -79,6 +82,17 @@ function checkAnagram(anagram) {
             alert('Incorrect!');
         }
     }
+}
+
+
+function createListItems(number) {
+    const list = document.getElementById('answerBox');
+    for (let i = 1; i <= number; i++) {
+        const listItem = document.createElement('li');
+        listItem.textContent = `${i}.`;
+        list.appendChild(listItem);
+    }
+    return list;
 }
 
 

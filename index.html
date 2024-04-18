@@ -5,12 +5,6 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 		<title>Unscrabble!</title>
 		<script src="https://cdn.jsdelivr.net/npm/sortablejs@1.14.0/Sortable.min.js"></script>
-		<script
-			src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"
-			integrity="sha512-7eHRwcbYkK4d9g/6tD/mhkf++eoTHwpNM9woBxtPUBWm67zeAfFC+HrdoE2GanKeocly/VxeLvIqwvCdk7qScg=="
-			crossorigin="anonymous"
-			referrerpolicy="no-referrer"></script>
-
 		<link rel="preconnect" href="https://fonts.googleapis.com" />
 		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 		<link
@@ -20,13 +14,18 @@
 		<link rel="stylesheet" href="styles.css" />
 	</head>
 	<body>
+		<h1 id="title">Word Warp</h1>
 		<div id="mainContainer">
-			<ul id="sort-group-1"></ul>
-			<ul id="sort-group-2"></ul>
+			<ul class="sort-group" id="sort-group-1"></ul>
+			<ul class="sort-group" id="sort-group-2"></ul>
 			<div id="btnContainer">
 				<button id="clearBtn">Clear</button>
 				<button id="submitBtn">Submit</button>
 			</div>
+		</div>
+
+		<div id="answerContainer">
+			<ul id="answerBox"></ul>
 		</div>
 		<script src="./script.js"></script>
 		<link
