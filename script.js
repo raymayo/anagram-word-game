@@ -20,6 +20,8 @@ new Sortable(document.getElementById('sort-group-2'), {
 let usedKeys = [];
 let score = 0;
 
+const list = document.getElementById('answerBox');
+
 function fetchWordsData() {
     fetch('./easy.json')
         .then((response) => response.json())
@@ -42,7 +44,7 @@ function fetchWordsData() {
                 checkAnagram(wordAna);
             });
 
-            console.log(wordAna.length);
+            // console.log(wordAna.length);
 
         })
         .catch((error) => {
@@ -75,6 +77,8 @@ function checkAnagram(anagram) {
         alert('word is already submitted');
     } else {
         if (foundWord) {
+            console.log(anagram.indexOf(foundWord));
+            console.log(list.childNodes[anagram.indexOf(foundWord)].textContent += ` ${foundWord}`);
             correctWordArray.push(foundWord);
             score++;
             alert('Correct!');
@@ -86,7 +90,6 @@ function checkAnagram(anagram) {
 
 
 function createListItems(number) {
-    const list = document.getElementById('answerBox');
     for (let i = 1; i <= number; i++) {
         const listItem = document.createElement('li');
         listItem.textContent = `${i}.`;
