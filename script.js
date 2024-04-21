@@ -44,12 +44,23 @@ function fetchWordsData() {
                 checkAnagram(wordAna);
             });
 
+            document.getElementById('clearBtn').addEventListener('click', () => {
+                document.getElementById('sort-group-1').textContent = '';
+                document.getElementById('sort-group-2').textContent = '';
+                splitStringAndCreateElements(selectedWord, document.getElementById('sort-group-2'));
+            });
+
             // console.log(wordAna.length);
 
         })
         .catch((error) => {
             console.error('Error fetching JSON:', error);
         });
+
+
+    // Add event listener for clear button outside fetchWordsData
+
+
 }
 
 fetchWordsData();
@@ -78,7 +89,7 @@ function checkAnagram(anagram) {
     } else {
         if (foundWord) {
             console.log(anagram.indexOf(foundWord));
-            console.log(list.childNodes[anagram.indexOf(foundWord)].textContent += ` ${foundWord}`);
+            console.log(list.childNodes[anagram.indexOf(foundWord)].textContent = ` ${foundWord}`);
             correctWordArray.push(foundWord);
             score++;
             alert('Correct!');
@@ -92,14 +103,10 @@ function checkAnagram(anagram) {
 function createListItems(number) {
     for (let i = 1; i <= number; i++) {
         const listItem = document.createElement('li');
-        listItem.textContent = `${i}.`;
+        listItem.textContent = `???`;
         list.appendChild(listItem);
     }
     return list;
 }
 
 
-// Add event listener for clear button outside fetchWordsData
-let clearBtn = document.getElementById('clearBtn').addEventListener('click', () => {
-    document.getElementById('sort-group-1').textContent = '';
-});

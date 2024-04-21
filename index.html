@@ -3,7 +3,7 @@
 	<head>
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-		<title>Unscrabble!</title>
+		<title>Word Warp</title>
 		<script src="https://cdn.jsdelivr.net/npm/sortablejs@1.14.0/Sortable.min.js"></script>
 		<link rel="preconnect" href="https://fonts.googleapis.com" />
 		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -12,19 +12,20 @@
 			rel="stylesheet" />
 		<link rel="shortcut icon" href="./u-fav.svg" type="image/x-icon" />
 		<link rel="stylesheet" href="styles.css" />
+		<link rel="stylesheet" href="https://unpkg.com/@sakun/system.css" />
 	</head>
 	<body>
-		<h1 id="title">Word Warp</h1>
-		<div id="mainContainer">
+		<h1 class="title">Word Warp</h1>
+		<div id="mainContainer" class="window standard-dialog">
 			<ul class="sort-group" id="sort-group-1"></ul>
 			<ul class="sort-group" id="sort-group-2"></ul>
 			<div id="btnContainer">
-				<button id="clearBtn">Clear</button>
-				<button id="submitBtn">Submit</button>
+				<button id="clearBtn" class="btn">Reset</button>
+				<button id="submitBtn" class="btn">Submit</button>
 			</div>
 		</div>
 
-		<div id="answerContainer">
+		<div id="answerContainer" class="window standard-dialog">
 			<ul id="answerBox"></ul>
 		</div>
 		<script src="./script.js"></script>
