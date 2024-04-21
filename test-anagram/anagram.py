@@ -28,16 +28,16 @@ def filter_one_letter_words(anagrams_data):
 
 # Example input words
 input_words = [
-    "marvel",
-    "toggle",
-    "plunge",
+    "master",
+    "resort",
+    "filter",
+    "enlist",
+    "detail",
     "danger",
-    "expert",
-    "candle",
-    "wisely",
-    "castle",
-    "jigsaw",
-    "rumble",
+    "artist",
+    "rescue",
+    "wither",
+    "silver",
 ]
 
 
